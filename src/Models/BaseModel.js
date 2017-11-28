@@ -23,7 +23,7 @@ class BaseModel {
     this.client = APIClient;
   }
 
-  get(endpoint, options) {
+  get(endpoint, options = {}) {
     if (!options.page) {
       return getAllPages(this.client, endpoint, options);
     }
